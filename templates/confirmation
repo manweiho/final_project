@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirmation Page</title>
+    <!-- Add CSS link tags for Bootstrap or your custom styles -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Reservation Confirmed</h1>
+        <p>Your flight reservation has been successfully made.</p>
+        <!-- Display reservation details -->
+        <p>Passenger Name: {{ passengerName }}</p>
+        <p>Origin: {{ origin }}</p>
+        <p>Destination: {{ destination }}</p>
+        <p>Flight Date: {{ flightDate }}</p>
+        <a href="/list" class="btn btn-primary">View Reservations</a>
+    </div>
+    <!-- Add JS script tags for Bootstrap or your custom scripts -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
