@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flight Reservation</title>
+    <!-- Add CSS link tags for Bootstrap or your custom styles -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Flight Reservation</h1>
+        <form method="POST" action="/reservation">
+            <div class="form-group">
+                <label for="passengerName">Passenger Name:</label>
+                <input type="text" class="form-control" id="passengerName" name="passengerName" required>
+            </div>
+            <div class="form-group">
+                <label for="flightDate">Flight Date:</label>
+                <input type="date" class="form-control" id="flightDate" name="flightDate" required>
+            </div>
+            <div class="form-group">
+                <label for="destination">Destination:</label>
+                <select class="form-control" id="destination" name="destination" required>
+                    <option value="New York">New York</option>
+                    <option value="Los Angeles">Los Angeles</option>
+                    <option value="Chicago">Chicago</option>
+                    <!-- Add more destination options if needed -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="origins">Origins:</label>
+                <select class="form-control" id="origins" name="origins" required>
+                    <option value="New York">New York</option>
+                    <option value="Los Angeles">Los Angeles</option>
+                    <option value="Chicago">Chicago</option>
+                    <!-- Add more destination options if needed -->
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <!-- Add JS script tags for Bootstrap or your custom scripts -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
