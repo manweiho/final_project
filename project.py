@@ -4,26 +4,27 @@ app = Flask(__name__, template_folder = '/home/ubuntu/templates/')
 
 @app.route('/')
 def home():
-   return render_template('home.html')
+   return render_template('welcome.html')
 
-@app.route('/enternew')
-def new_employee():
-   return render_template('employee.html')
+@app.route('/reserve')
+def new_registration():
+   return render_template('reservation.html')
 
 
-@app.route('/registration',methods = ['POST', 'GET'])
+@app.route('/confirmation',methods = ['POST', 'GET'])
 def addrec():
    if request.method == 'POST':
       try:
-         EmpID = request.form['id']
-         EmpName = request.form['nm']
-         EmpGender = request.form['g']
-         EmpPhone = request.form['phone']
-         EmpBdate = request.form['date']
+         Name = request.form['nm']
+         Email = request.form['email']
+         Phone = request.form['phone']
+         Origins = request.form['orig']
+         Destination = request.form['dest']
+         Date = request.form['date']
 
-         with sql.connect("/home/ubuntu/week13_flask/employees.db") as con:
+         with sql.connect("/home/ubuntu/final_project/flights.db") as con:
             cur = con.cursor()
-            cmd = "INSERT INTO employees (EmpID,EmpName,EmpGender,EmpPhone,EmpBdate) VALUES ('{0}','{1}','{2}','{3}','{4}')".format(EmpID,EmpName,EmpGender,EmpPhone,EmpBdate)
+            cmd = "INSERT INTO employees (Name,Email,Phone,Origins,Destination,Date) VALUES ('{0}','{1}','{2}','{3}','{4}',{5}')".format(Name,Email,Phone,Origins,Destination,Date)
             cur.execute(cmd)
 
             con.commit()
@@ -33,19 +34,19 @@ def addrec():
          msg = "error in insert operation"
 
       finally:
-         return render_template("result.html",msg = msg)
+         return render_template("confirmation.html",msg = msg)
          con.close()
 
-@app.route('/information')
+@app.route('/list')
 def information():
-   con = sql.connect("/home/ubuntu/week13_flask/employees.db")
+   con = sql.connect("/home/ubuntu/final_project/flights.db")
    con.row_factory = sql.Row
    
    cur = con.cursor()
-   cur.execute("select * from employees")
+   cur.execute("select * from flights")
    
    rows = cur.fetchall(); 
-   return render_template("information.html",rows = rows)
+   return render_template("list.html",rows = rows)
 
 if __name__ == '__main__':
    app.run(debug = True)
