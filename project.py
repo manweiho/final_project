@@ -1,6 +1,6 @@
 rom flask import Flask, render_template, request
 import sqlite3 as sql
-app = Flask(__name__, template_folder = '/home/ubuntu/templates/')
+app = Flask(__name__, template_folder = '/home/ubuntu/project_templates/')
 
 @app.route('/')
 def home():
