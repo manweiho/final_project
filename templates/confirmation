@@ -10,10 +10,11 @@
         <h1>Reservation Confirmed</h1>
         <p>Your flight reservation has been successfully made.</p>
         <!-- Display reservation details -->
-        <p>Passenger Name: {{ passengerName }}</p>
-        <p>Origin: {{ origin }}</p>
-        <p>Destination: {{ destination }}</p>
-        <p>Flight Date: {{ flightDate }}</p>
+        <p>Passenger First Name: {{ nm }}</p>
+        <p>Passenger Last Name: {{ln}}</p>
+        <p>Origin: {{ orig }}</p>
+        <p>Destination: {{ dest }}</p>
+        <p>Flight Date: {{ date }}</p>
         <a href="/list" class="btn btn-primary">View Reservations</a>
     </div>
     <!-- Add JS script tags for Bootstrap or your custom scripts -->
