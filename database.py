@@ -6,4 +6,4 @@ print("Opened database successfully")
 conn.execute('CREATE TABLE flights (FlightID INT AUTO_INCREMENT PRIMARY KEY, FirstName TEXT, LastName TEXT, Email TEXT, Phone TEXT, Origins TEXT, Destination TEXT, Date DATE)')
 print("Table created successfully")
 
-conn.close(
+conn.close()
