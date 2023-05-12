@@ -3,19 +3,25 @@
  <body>
   <table border = 1>
    <thead>
-    <td>ID</td>
-    <td>Name</td>
-    <td>Gender</td>
+    <td>Flight ID</td>
+    <td>First Name</td>
+    <td>Last Name</td>
+    <td>Email</td>
     <td>Phone</td>
-    <td>Address</td>
+    <td>Origins</td>
+    <td>Destination</td>
+    <td>Date</td>
    </thead>
    {% for row in rows %}
     <tr>
-     <td>{{row["EmpID"]}}</td>
-     <td>{{row["EmpName"]}}</td>
-     <td>{{row["EmpGender"]}}</td>
-     <td>{{row["EmpPhone"]}}</td>
-     <td>{{row["EmpBdate"]}}</td>
+     <td>{{row["FlightID"]}}</td>
+     <td>{{row["FirstName"]}}</td>
+     <td>{{row["LastName"]}}</td>
+     <td>{{row["Email"]}}</td>
+     <td>{{row["Phone"]}}</td>
+     <td>{{row["Origins"]}}</td>
+     <td>{{row["Destination"]}}</td>
+     <td>{{row["Date"]}}</td>
     </tr>
    {% endfor %}
   </table>
