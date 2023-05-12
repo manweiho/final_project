@@ -24,7 +24,7 @@ def addrec():
 
          with sql.connect("/home/ubuntu/final_project/flights.db") as con:
             cur = con.cursor()
-            cmd = "INSERT INTO employees (Name,Email,Phone,Origins,Destination,Date) VALUES ('{0}','{1}','{2}','{3}','{4}',{5}')".format(Name,Email,Phone,Origins,Destination,Date)
+            cmd = "INSERT INTO flights (Name,Email,Phone,Origins,Destination,Date) VALUES ('{0}','{1}','{2}','{3}','{4}',{5}')".format(Name,Email,Phone,Origins,Destination,Date)
             cur.execute(cmd)
 
             con.commit()
