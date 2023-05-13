@@ -12,6 +12,8 @@
         <!-- Display reservation details -->
         <p>Passenger First Name: {{ nm }}</p>
         <p>Passenger Last Name: {{ln}}</p>
+        <p>Phone: {{phone}}</p>
+        <p>Email: {{email}}</p>
         <p>Origin: {{ orig }}</p>
         <p>Destination: {{ dest }}</p>
         <p>Flight Date: {{ date }}</p>
