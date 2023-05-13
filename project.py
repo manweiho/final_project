@@ -35,7 +35,7 @@ def addrec():
          msg = "error in insert operation"
 
       finally:
-         return render_template("confirmation.html",msg = msg)
+         return render_template("confirmation.html",nm = FirstName, ln=LastName, email=Email, phone=Phone, orig=Origins, dest=Destination, date=Date)
          con.close()
 
 @app.route('/list')
