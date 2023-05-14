@@ -1,13 +1,23 @@
 <!doctype html>
 <html>
  <head>
-  <!-- Add Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
-   /* Custom CSS */
    .blue-header {
     background-color: blue;
     color: white;
+   }
+   .center-align {
+    text-align: center;
+   }
+   .blue-button {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 5px;
+    text-decoration: none;
    }
   </style>
  </head>
@@ -41,10 +51,12 @@
      {% endfor %}
     </tbody>
    </table>
-   <a href="/">Go back to home page</a>
-  </div>
+   <div class="center-align">
+    <a href="/" class="blue-button">Back to home page</a>
+   </div>
 
-  <!-- Add Bootstrap JS (optional, for certain components) -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
  </body>
 </html>
