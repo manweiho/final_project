@@ -1,5 +1,5 @@
-rom flask import Flask, render_template, request
-import sqlite3 as sql
+from flask import Flask, render_template, request
+import mysql.connector as sql
 app = Flask(__name__, template_folder = '/home/ubuntu/project_templates/')
 
 @app.route('/')
@@ -19,35 +19,34 @@ def addrec():
          LastName = request.form['ln']
          Email = request.form['email']
          Phone = request.form['phone']
-         Origins = request.form['orig']
+         Origin = request.form['orig']
          Destination = request.form['dest']
          Date = request.form['date']
+         DepartureTime = request.form['time']
 
-         with sql.connect("/home/ubuntu/final_project/flights.db") as con:
+         with sql.connect(host="localhost", user="final", password="2807", database="flights_db") as con:
             cur = con.cursor()
-            cmd = "INSERT INTO flights (FirstName,LastName,Email,Phone,Origins,Destination,Date) VALUES ('{0}','{1}','{2}','{3}','{4}',{5}','{6}')".format(FirstName,LastName,Email,Phone,Origins,Destination,Date)
+            cmd = "INSERT INTO flights (FirstName,LastName,Email,Phone,Origin,Destination,Date,DepartureTime) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}')".format(FirstName,LastName,Email,Phone,Origin,Destination,Date,DepartureTime)>    
             cur.execute(cmd)
 
             con.commit()
-            msg = "Record successfully added"
+            msg = "has been sucessfully made"
       except:
          con.rollback()
-         msg = "error in insert operation"
+         msg = "had an error. Please try again or contact customer service"
 
       finally:
-         return render_template("confirmation.html",nm = FirstName, ln=LastName, email=Email, phone=Phone, orig=Origins, dest=Destination, date=Date)
+         return render_template("confirmation.html",nm = FirstName, ln=LastName, email=Email, phone=Phone, orig=Origin, dest=Destination, date=Date, time=DepartureTime,msg=msg)
          con.close()
 
 @app.route('/list')
 def information():
-   con = sql.connect("/home/ubuntu/final_project/flights.db")
-   con.row_factory = sql.Row
-   
-   cur = con.cursor()
-   cur.execute("select * from flights")
-   
-   rows = cur.fetchall(); 
-   return render_template("list.html",rows = rows)
+  with sql.connect(host="localhost", user="final", password="2807", database="flights_db") as conn:
+    cur = conn.cursor()
+    cur.execute("select * from flights")
+    rows = cur.fetchall()
+ 
+  return render_template("list.html",rows = rows)
 
 if __name__ == '__main__':
-   app.run(debug = True)
+  app.run(debug = True)
