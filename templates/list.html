@@ -1,28 +1,50 @@
 <!doctype html>
 <html>
+ <head>
+  <!-- Add Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+   /* Custom CSS */
+   .blue-header {
+    background-color: blue;
+    color: white;
+   }
+  </style>
+ </head>
  <body>
-  <table border = 1>
-   <thead>
-    <td>First Name</td>
-    <td>Last Name</td>
-    <td>Email</td>
-    <td>Phone</td>
-    <td>Origins</td>
-    <td>Destination</td>
-    <td>Date</td>
-   </thead>
-   {% for row in rows %}
-    <tr>
-     <td>{{row["FirstName"]}}</td>
-     <td>{{row["LastName"]}}</td>
-     <td>{{row["Email"]}}</td>
-     <td>{{row["Phone"]}}</td>
-     <td>{{row["Origins"]}}</td>
-     <td>{{row["Destination"]}}</td>
-     <td>{{row["Date"]}}</td>
-    </tr>
-   {% endfor %}
-  </table>
-  <a href = "/">Go back to home page</a>
+  <div class="container">
+   <table class="table table-bordered">
+    <thead>
+     <tr>
+      <th class="blue-header">First Name</th>
+      <th class="blue-header">Last Name</th>
+      <th class="blue-header">Email</th>
+      <th class="blue-header">Phone</th>
+      <th class="blue-header">Origin</th>
+      <th class="blue-header">Destination</th>
+      <th class="blue-header">Flight Date</th>
+      <th class="blue-header">Departure Time</th>
+     </tr>
+    </thead>
+    <tbody>
+     {% for row in rows %}
+      <tr>
+       <td>{{ row[1] }}</td>
+       <td>{{ row[2] }}</td>
+       <td>{{ row[3] }}</td>
+       <td>{{ row[4] }}</td>
+       <td>{{ row[5] }}</td>
+       <td>{{ row[6] }}</td>
+       <td>{{ row[7] }}</td>
+       <td>{{ row[8] }}</td>
+      </tr>
+     {% endfor %}
+    </tbody>
+   </table>
+   <a href="/">Go back to home page</a>
+  </div>
+
+  <!-- Add Bootstrap JS (optional, for certain components) -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
  </body>
 </html>
