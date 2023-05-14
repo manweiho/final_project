@@ -1,9 +1,11 @@
-import sqlite3
+import mysql.connector as sql
 
-conn = sqlite3.connect('/home/ubuntu/final_project/flights.db')
-print("Opened database successfully")
+conn = sql.connect(host="localhost", user="final", password="2807")
+cur = conn.cursor()
 
-conn.execute('CREATE TABLE flights (FlightID INT AUTO_INCREMENT PRIMARY KEY, FirstName TEXT, LastName TEXT, Email TEXT, Phone TEXT, Origins TEXT, Destination TEXT, Date DATE)')
-print("Table created successfully")
+# Test connection
+print(conn)
 
+cmd = "CREATE DATABASE flights_db"
+cur.execute(cmd)
 conn.close()
