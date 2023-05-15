@@ -31,12 +31,15 @@ def addrec():
 
             con.commit()
             msg = "has been sucessfully made"
+            
+            cur.execute("SELECT LAST_INSERT_ID()")
+            id = cur.fetchone()[0]
       except:
          con.rollback()
          msg = "had an error. Please try again or contact customer service"
 
       finally:
-         return render_template("confirmation.html",nm = FirstName, ln=LastName, email=Email, phone=Phone, orig=Origin, dest=Destination, date=Date, time=DepartureTime,msg=msg)
+         return render_template("confirmation.html",id=id, nm = FirstName, ln=LastName, email=Email, phone=Phone, orig=Origin, dest=Destination, date=Date, time=DepartureTime,msg=msg)
          con.close()
 
 @app.route('/list')
