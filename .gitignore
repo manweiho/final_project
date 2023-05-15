@@ -1,0 +1,39 @@
+# Compiled Python files
+*.pyc
+__pycache__/
+
+# Virtual environment
+venv/
+env/
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# Editor backup files
+*~
+
+# Database files
+*.db
+
+# Logs
+logs/
+
+# Production server specific files
+*.conf
+
+# Dependency directories
+node_modules/
+bower_components/
+
+# Compiled CSS and JavaScript files
+*.css
+*.js
+
+# Temporary files
+*.tmp
+
+# Project-specific files or directories to ignore
+*.log
+*.swp
+*.swo
