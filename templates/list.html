@@ -26,6 +26,7 @@
    <table class="table table-bordered">
     <thead>
      <tr>
+      <th class="blue-header">Reservation ID</th>
       <th class="blue-header">First Name</th>
       <th class="blue-header">Last Name</th>
       <th class="blue-header">Email</th>
@@ -39,6 +40,7 @@
     <tbody>
      {% for row in rows %}
       <tr>
+       <td>{{ row[0] }}</td>
        <td>{{ row[1] }}</td>
        <td>{{ row[2] }}</td>
        <td>{{ row[3] }}</td>
