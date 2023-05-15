@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find Reservation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        .center-align {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .shorten-input {
+            max-width: 200px;
+            margin: 0 auto;
+            text-align: center; /* Add this line to center align the text inside inputs */
+        }
+
+        .custom-button {
+            background-color: blue;
+            color: white;
+        }
+
+        .center-label {
+            text-align: center;
+            display: block; /* Add this line to make the labels centered block elements */
+            margin-bottom: 10px; /* Add this line to add some space between labels and inputs */
+        }
+    </style>
+</head>
+<body>
+    <div class="center-align">
+        <div class="container">
+            <h1 class="text-center">Find a Reservation</h1>
+            <form action="{{url_for('search')}}" method="POST">
+                <div class="form-group">
+                    <label for="id" class="center-label">Reservation ID:</label>
+                    <input type="number" id="id" name="id" required class="form-control shorten-input">
+                </div>
+                <div class="form-group">
+                    <label for="first_name" class="center-label">First Name:</label>
+                    <input type="text" id="first_name" name="first_name" required class="form-control shorten-input">
+                </div>
+                <div class="form-group">
+                    <label for="last_name" class="center-label">Last Name:</label>
+                    <input type="text" id="last_name" name="last_name" required class="form-control shorten-input">
+                </div>
+                <div class="text-center">
+                    <input type="submit" value="Find" class="btn custom-button">
+                </div>
+           </form>
+        </div>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
