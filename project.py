@@ -48,5 +48,26 @@ def information():
  
   return render_template("list.html",rows = rows)
 
+@app.route('/search', methods=['GET', 'POST'])
+def search():
+    if request.method == 'POST':
+        id_query = request.form['id']
+        first_name_query = request.form['first_name']
+        last_name_query = request.form['last_name']
+
+        with sql.connect(host="localhost", user="final", password="2807", database="flights_db") as con:
+            cur = con.cursor()
+
+            # Search by ID, First Name, and Last Name
+            cur.execute("SELECT * FROM flights WHERE FlightID = %s AND FirstName = %s AND LastName = %s", (id_query, first_name_query, last_name_query))
+
+            rows = cur.fetchall()
+
+        con.close()
+        return render_template("search_results.html", rows=rows)
+
+    return render_template("search.html")
+
+
 if __name__ == '__main__':
   app.run(debug = True)
