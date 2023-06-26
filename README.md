@@ -1,4 +1,4 @@
-# MGS406 Final Project: Flight Reservation Web Prototype #
+# MGS406 Final Project: Flight Reservation Website #
 The flight reservation project aims to develop a prototypical web application that allows users to reserve flights. The application will have a user-friendly interface designed using HTML, CSS, and Bootstrap to ensure a responsive and visually appealing user experience across different devices supported by backend Python.
 
 Upon accessing the application, users will be greeted with a welcoming page introducing the flight reservation system. From there, they will have the option to reserve a flight or find a reservation. There is an option for database administrator to see all booking details and they have to log in.
